@@ -21,16 +21,19 @@ def main():
             if event.type == pg.QUIT: return
 
         key_lst = pg.key.get_pressed() #lec10-3
+
+        tate = 0
+        yoko = -1
         if key_lst[pg.K_UP]:
-            kt_rct.move_ip(0, -1)
+            tate = -1
         if key_lst[pg.K_DOWN]:
-            kt_rct.move_ip(0, +1)
+            tate = +1
         if key_lst[pg.K_LEFT]:
-            kt_rct.move_ip(-1, 0)
+            yoko = -1
         if key_lst[pg.K_RIGHT]:
-            kt_rct.move_ip(+1, 0)
-        else:
-            kt_rct.move_ip(-1, 0)
+            yoko = +1
+        
+        kt_rct.move_ip(yoko, tate)
 
         x = tmr%3200 #lec9
         screen.blit(bg_img, [-x, 0])
