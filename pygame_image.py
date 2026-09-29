@@ -29,6 +29,8 @@ def main():
             kt_rct.move_ip(-1, 0)
         if key_lst[pg.K_RIGHT]:
             kt_rct.move_ip(+1, 0)
+        else:
+            kt_rct.move_ip(-1, 0)
 
         x = tmr%3200 #lec9
         screen.blit(bg_img, [-x, 0])
